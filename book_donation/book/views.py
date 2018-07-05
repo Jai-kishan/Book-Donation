@@ -12,6 +12,10 @@ def Home(request):
     return render(request, 'home.html')
 @login_required
 @transaction.atomic
+
+
+
+
 def update_profile(request):
     if request.method == 'POST':
         user_form = UserForm(request.POST, instance=request.user)
@@ -29,6 +33,12 @@ def update_profile(request):
         'user_form': user_form,
         'profile_form': profile_form
     })
+
+
+
+
 def Logout(request):
     logout(request)
     return HttpResponseRedirect('/')
+
+
